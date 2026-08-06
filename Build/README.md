@@ -273,3 +273,11 @@ Documentation can be generated through doxygen:
 
 - Install Doxygen (https://www.doxygen.nl/download.html)
 - Run: run_doxygen.bat
+
+## Bazel
+
+``` bash
+bazel build //:jolt
+bazel run //:hello_world
+bazel run //:samples
+```
