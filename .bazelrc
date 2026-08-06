@@ -1,0 +1,14 @@
+build --enable_runfiles
+build --enable_platform_specific_config
+build --compilation_mode=opt
+build:windows --extra_toolchains=@local_config_cc//:cc-toolchain-x64_windows-clang-cl
+build:windows --extra_execution_platforms=//:x64_windows-clang-cl
+build:windows --cxxopt=-std:c++20
+build:macos --cxxopt=-std=c++20 --copt=-mmacosx-version-min=13.4
+build:linux --action_env=CC=clang-18
+build:linux --action_env=CXX=clang++-18
+build:linux --cxxopt=-std=c++20
+build:linux --cxxopt=-stdlib=libc++
+build:linux --linkopt=-stdlib=libc++
+
+test --test_output=errors
