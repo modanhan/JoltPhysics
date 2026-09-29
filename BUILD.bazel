@@ -20,7 +20,7 @@ cc_library(
             "Jolt/**/*.inl",
         ],
     ),
-    copts = ["-I."], 
+    includes = ["Jolt"],
 )
 
 cc_binary(
